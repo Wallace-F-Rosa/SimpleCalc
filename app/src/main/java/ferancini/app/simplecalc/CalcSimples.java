@@ -29,7 +29,12 @@ public class CalcSimples extends AppCompatActivity {
 
     public void clickOperador(View v){
         String resultado = "O Resultado é : ";
-        if(!edtValor1.getText().toString().equals("") && !edtValor2.getText().toString().equals("")){
+        //entrada não pode ser string vazia
+        boolean validInput = !edtValor1.getText().toString().equals("") && !edtValor2.getText().toString().equals("");
+        //entrada não pode ser só caracteres especiais - e .
+        validInput = validInput && !edtValor1.getText().toString().equals("-") && !edtValor2.getText().toString().equals("-");
+        validInput = validInput && !edtValor1.getText().toString().equals(".") && !edtValor2.getText().toString().equals(".");
+        if(validInput){
             BigDecimal val1 = new BigDecimal(edtValor1.getText().toString());
             BigDecimal val2 = new BigDecimal(edtValor2.getText().toString());
 
