@@ -26,6 +26,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
+        android:inputType="numberDecimal"
+        android:ems="10"
         android:layout_below="@+id/txtValor1"/>
 
     <TextView
@@ -48,6 +50,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
+        android:inputType="numberDecimal"
         android:layout_below="@+id/txtValor2"
         />
 
