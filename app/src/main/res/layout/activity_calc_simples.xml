@@ -89,4 +89,15 @@
         android:layout_toLeftOf="@id/btnDiv"
         android:text="*" />
 
+    <TextView
+        android:id="@+id/txtResultado"
+        android:textSize="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="O Resultado é : "
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="64dp"
+        />
+
 </RelativeLayout>
