@@ -45,7 +45,7 @@ public class CalcSimples extends AppCompatActivity {
                 resultado += val1.multiply(val2).toString();
             }
             else {
-                resultado += val1.divide(val2, 5, BigDecimal.ROUND_CEILING).toString();
+                resultado += val1.divide(val2, 10, BigDecimal.ROUND_CEILING).toString();
             }
         }
 
