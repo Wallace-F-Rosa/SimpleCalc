@@ -46,28 +46,33 @@
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:tag="digit"
-                        android:text="7" />
+                        android:tag="7"
+                        android:text="7"
+                        android:onClick="clickDigit"
+                        />
 
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:text="8"
-                        android:tag="digit"
+                        android:tag="8"
+                        android:onClick="clickDigit"
                         />
 
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:text="9"
-                        android:tag="digit"
+                        android:tag="9"
+                        android:onClick="clickDigit"
                         />
 
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:text="/"
-                        android:tag="operator"
+                        android:tag="/"
+                        android:onClick="clickOperation"
                         />
 
                 </LinearLayout>
@@ -80,28 +85,33 @@
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:tag="digit"
-                        android:text="4" />
+                        android:tag="4"
+                        android:text="4"
+                        android:onClick="clickDigit"
+                        />
 
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:text="5"
-                        android:tag="digit"
+                        android:tag="5"
+                        android:onClick="clickDigit"
                         />
 
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:text="6"
-                        android:tag="digit"
+                        android:tag="6"
+                        android:onClick="clickDigit"
                         />
 
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:text="x"
-                        android:tag="operator"
+                        android:text="X"
+                        android:tag="x"
+                        android:onClick="clickOperation"
                         />
 
                 </LinearLayout>
@@ -114,28 +124,33 @@
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:tag="digit"
-                        android:text="1" />
+                        android:tag="1"
+                        android:text="1"
+                        android:onClick="clickDigit"
+                        />
 
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:text="2"
-                        android:tag="digit"
+                        android:tag="2"
+                        android:onClick="clickDigit"
                         />
 
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:text="3"
-                        android:tag="digit"
+                        android:tag="3"
+                        android:onClick="clickDigit"
                         />
 
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:text="-"
-                        android:tag="operator"
+                        android:tag="-"
+                        android:onClick="clickOperation"
                         />
 
                 </LinearLayout>
@@ -148,21 +163,25 @@
                     <Button
                         android:layout_width="96dp"
                         android:layout_height="48dp"
-                        android:tag="digit"
-                        android:text="0" />
+                        android:tag="0"
+                        android:text="0"
+                        android:onClick="clickDigit"
+                        />
 
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:text="."
-                        android:tag="digit"
+                        android:tag="."
+                        android:onClick="clickDecimal"
                         />
 
                     <Button
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:text="+"
-                        android:tag="operator"
+                        android:tag="+"
+                        android:onClick="clickOperation"
                         />
 
                 </LinearLayout>
@@ -178,19 +197,25 @@
                     android:id="@+id/btnBackSpace"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:text="@string/backspacetext"/>
+                    android:text="@string/backspacetext"
+                    android:onClick="clickBackSpace"
+                    />
 
                 <Button
                     android:id="@+id/btnClear"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:text="C"/>
+                    android:text="C"
+                    android:onClick="clickClear"
+                    />
 
                 <Button
                     android:id="@+id/btnResult"
                     android:layout_width="48dp"
                     android:layout_height="96dp"
-                    android:text="="/>
+                    android:text="="
+                    android:onClick="clickResult"
+                    />
             </LinearLayout>
 
         </LinearLayout>
