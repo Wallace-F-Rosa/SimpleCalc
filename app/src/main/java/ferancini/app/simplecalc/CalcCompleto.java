@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class CalcCompleto extends AppCompatActivity {
 
     private EditText edtExpression;
@@ -16,7 +19,6 @@ public class CalcCompleto extends AppCompatActivity {
     //se estiver digitando um decimal usamos esse estado para impedir
     //o usuário de clicar em . de novo
     private boolean TYPING_DECIMAL_STATE = false;
-    private String LAST_OPERATION = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,14 +71,61 @@ public class CalcCompleto extends AppCompatActivity {
         edtExpression.setText("");
     }
 
+
+    public int getOperationIndex(String expr){
+        char[] operators = {'+', '-', 'x', '/'};
+
+        for(Character op : operators){
+            int i = expr.indexOf(op);
+            if(i != -1)
+                return i;
+        }
+
+        return -1; //nenhum operador encontrado
+    }
+
+    public BigDecimal getResult(String expr) throws Exception {
+        BigDecimal result = new BigDecimal("0");
+
+        int opIndex = getOperationIndex(expr);
+        if (opIndex == -1)
+            return new BigDecimal(expr);
+        char c = expr.charAt(opIndex);
+
+        if(opIndex > 0){
+            BigDecimal val1 = new BigDecimal(expr.substring(0,opIndex));
+            BigDecimal val2 = new BigDecimal(expr.substring(opIndex+1));
+            System.out.println("Valor 1 = "+val1.toString() + " Valor 2 = "+val2.toString());
+
+            if(c == '+')
+                return val1.add(val2);
+            if(c=='-')
+                return val1.subtract(val2);
+            if(c=='x')
+                return val1.multiply(val2);
+            if(c=='/')
+                return val1.divide(val2, 5, RoundingMode.CEILING);
+        }
+        if(opIndex == 0) {
+            //TODO: se der tempo suportar expressões
+            if ( c == '+' || c == '-')
+                return new BigDecimal(expr);
+        }
+        else
+            throw new Exception("Expressão inválida");
+
+        return result;
+    }
+
     public void clickResult(View v){
-        //TODO: aqui ocorre a mágica
         //tratar primeiro multiplicação e divisão
         //subtração e adição podem ser feitas a primeira que achar
         String expr = edtExpression.getText().toString();
-        expr.replace('x','*');
-        try {
 
+        try {
+            //TODO: aqui ocorre a mágica
+            BigDecimal resultado = getResult(expr);
+            edtExpression.setText(resultado.toString());
         }
         catch(Exception e){
             Context context = getApplicationContext();
